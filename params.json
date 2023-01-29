@@ -1,0 +1,67 @@
+{
+	"project_dir": "/groups/Projects/P1454",
+	"fig_dir": "/groups/Projects/P1454/results/figures",
+	"hmm_dir": "/groups/Projects/P1454/results/HMMs",
+	"brainstorm_dir": "/scratch/groups/Projects/P1454/brainstormdb/Tetris/data",
+	"behaviour_dir": "/groups/Projects/P1454/behavioural_data",
+	"preprocessed_dataframe_output_name": "all_preprocessed_episodes.csv",
+	"pca_component_labels":
+	[
+		"disarray",
+		"well_prep",
+		"action_inefficiency",
+		"dec_act_latency"
+	],
+	"components":
+	{
+        "well_prep": "Well preparation",
+        "action_inefficiency": "Action inefficiency",
+        "dec_act_latency": "Decision-action latency",
+        "diff_disarray": "Change in disarray"
+	},
+	"z_components":
+	{
+        "z_well_prep": "Well preparation",
+        "z_action_inefficiency": "Action inefficiency",
+        "z_dec_act_latency": "Decision-action latency",
+        "z_diff_disarray": "Change in disarray"
+	},
+	"participants":
+	[
+		"R2312",
+		"R2595",
+		"R3154",
+		"R3591",
+		"R4452",
+		"R4483",
+		"R5628",
+		"R5816",
+		"R5996",
+		"R6013",
+		"R6074",
+		"R6077"
+	],
+	"participants_to_ignore":
+	[
+		"R6044",
+		"R6055"
+	],
+	"n_states": 3,
+	"n_model_fits": 20,
+	"seconds_per_epoch": 1,
+	"frequency_bands":
+	{
+		"alpha": ["8Hz", "9Hz", "10Hz", "11Hz", "12Hz"],
+		"mu": ["8Hz", "9Hz", "10Hz", "11Hz", "12Hz", "13Hz"],
+		"theta": ["3Hz", "4Hz", "5Hz", "6Hz", "7Hz"]
+	},
+	"regions_of_interest":
+	[
+		"V1_exvivo_L",
+		"V1_exvivo_R",
+		"BA4a_exvivo_L",
+		"BA4a_exvivo_R",
+		"BA6_exvivo_L",
+		"BA6_exvivo_R"
+	]
+}

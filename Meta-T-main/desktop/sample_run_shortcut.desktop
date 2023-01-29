@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Tutoring Study Day 1
+Comment=Experiment 122
+Exec="../scripts/sample_runscript.sh"
+Type=Application
+Terminal = true

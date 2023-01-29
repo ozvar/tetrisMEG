@@ -1,0 +1,106 @@
+Playback System User Guide
+
+
+Upon loading, program will ask for a data directory. Old and new datatypes, as well as fixed-length and keyword log types are supported. Retrieves the framerate (fps) and log type (fixed_log) automatically from the configuration (.config) file, and then parses the complete log for relevant gameplay data. 
+
+
+Control scheme:
+    
+    Episode navigation:
+    [Left] 
+	  Go to previous episode
+    [Right]
+	  Go to next episode
+	*if going in the opposite direction of playback, will repeat current episode unless pressed within 1 second of start time (similar to a music player)
+    
+    
+    Velocity control:
+	[Down]
+	  Reduce framerate
+	[Up]
+	  Increase framerate
+    [Space]
+      Pause or resume playback
+     
+
+
+
+    
+
+
+
+
+
+
+Previous playback version (__old__positional playback.py), fully deprecated, but may guide future development of current program:
+
+
+
+Unimplemented controls:
+    [Q]
+      Reverse, maintaining velocity
+    Microplayback
+    [<]
+      Go back a single action
+    [>]
+      Go forward a single action
+    [E]
+	  Episode lock; restricts playback to current episode. Can still skip with up and down
+    [T]
+	  Tag lock: restricts playback to tagged episodes only
+
+
+
+    [Relevant] Meters:
+    
+    Tagline (bottom):
+      Indicates where in the playback of this data an event tagged as "potentially episodic" appears. 
+      Above line, Translation criteria:
+        Green: Most lenient
+        Yellow: Medium strictness
+        Red: Most strict
+      Below line, Rotation criteria:
+        Teal: Overrotation
+        Blue: Both rotations
+        Fuchia: Both Over- and Both-rotations
+    *White line through tags disappears when in Taglock mode
+    
+    Velocity indicator (above play button):
+      Indicates current velocity.
+      Position and height of green bar indicate velocity, with 0 marked by the white tickmark.
+      Absolute value of speed:
+        Maximum: 8x
+        Minimum: 1/4x
+    
+    Taglock indicator:
+      Appears below playback controls when tags are locked. Displays tag colors
+    
+    Episodelock indicator:
+      Appears between Play and Back button, green. Indicates when episode lock mode is active.
+
+	
+
+
+if each[1][2]: #strict translation
+            color = (255,0,0) #red
+        elif each[1][1]: #medium translation
+            color = (255,255,0) #yellow
+        elif each[1][0]: #lenient translation 
+            color = (0,128,0) #green
+        
+        #draw if one exists
+        if each[1][0] or each[1][1] or each[1][2]:
+	        pygame.draw.line(screen, color, (each[0]*640/numepisodes + 30,510), (each[0]*640/numepisodes + 30, 530))
+	        #if taglock is on, draw the tags smashed together to indicate meaning of taglock mode
+	        if taglock:
+	          pygame.draw.line(screen, color, (taglock_rect.left + 2*tag_inc, taglock_rect.top), (taglock_rect.left + 2*tag_inc, taglock_rect.top + taglock_rect.height/2))
+            
+        if each[1][3] and each[1][4]: #both over and both rotation
+            color = (255, 0, 255) #Fuchia
+        elif each[1][3]: #over rotation
+            color = (0, 128, 128) #teal
+        elif each[1][4]: #both rotations
+            color = (0, 0, 255) #blue
+
+
+2007_s19_m_4

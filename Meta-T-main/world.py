@@ -191,7 +191,7 @@ if platform.system() == 'Windows':
     sep = "/"
     
 
-scannermode = 1
+scannermode = 0
 # initialise parallel port and set all pins low
 if scannermode == 1:
     #logFile.write('Experiment run in the scanner\n\n')

@@ -1,7 +1,6 @@
 numpy
 pyparallel
 pygame
-psychopy
 Twisted
 arabic-reshaper==2.1.3
 astunparse==1.6.3
